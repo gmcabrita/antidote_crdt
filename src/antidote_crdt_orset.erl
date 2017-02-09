@@ -95,7 +95,7 @@ new() ->
 %% @doc return all existing elements in the `orset()'.
 -spec value(orset()) -> [member()].
 value(ORSet) ->
-    orddict:fetch_keys(ORSet).
+    ORSet.
 
 %% @doc generate downstream operations.
 %% If the operation is add or add_all, generate unique tokens for
