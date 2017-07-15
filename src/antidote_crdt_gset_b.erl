@@ -54,12 +54,14 @@ value(Set) ->
 
 -spec downstream(gset_op(), gset()) -> {ok, gset_effect()}.
 downstream({add, Elem}, _State) ->
-  {ok, gb_sets:singleton(Elem)};
+  {ok, Elem};
 downstream({add_all, Elems}, _State) ->
   {ok, gb_sets:from_list(Elems)}.
 
-update(Effect, State) ->
-  {ok, gb_sets:union(State, Effect)}.
+update(Effect, State) when is_tuple(Effect) ->
+  {ok, gb_sets:union(State, Effect)};
+update(Elem, State) ->
+  {ok, gb_sets:add(Elem, State)}.
 
 require_state_downstream(_Operation) -> false.
 
