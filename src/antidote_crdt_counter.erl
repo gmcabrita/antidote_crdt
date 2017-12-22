@@ -123,7 +123,12 @@ require_state_downstream(_) ->
 can_compress(_, _) -> true.
 
 -spec compress(pncounter_effect(), pncounter_effect()) -> {pncounter_effect() | noop, pncounter_effect() | noop}.
-compress(N1, N2) -> {noop, N1+N2}.
+compress(N1, N2) ->
+    NewOp = case N1+N2 of
+        0 -> noop;
+        Result -> Result
+    end,
+    {noop, NewOp}.
 
 %% ===================================================================
 %% EUnit tests
@@ -187,7 +192,7 @@ binary_test() ->
 
 compression_test() ->
     ?assertEqual(can_compress(5, -5), true),
-    ?assertEqual(compress(5, -5), {noop, 0}),
+    ?assertEqual(compress(5, -5), {noop, noop}),
     ?assertEqual(compress(10, -5), {noop, 5}),
     ?assertEqual(compress(-5, -5), {noop, -10}).
 
