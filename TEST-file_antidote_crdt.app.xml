@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="70" failures="0" errors="0" skipped="0" time="0.370" name="file &quot;antidote_crdt.app&quot;">
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 increment_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 localPermisisons_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 decrement_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 decrement_increment_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 transfer_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 value_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 binary_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_bcounter:0 is_operation_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 value_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 update_increment_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 update_increment_by_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 update_decrement_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 update_negative_params_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 equal_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 binary_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_counter:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_fat_counter:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.009" name="antidote_crdt_fat_counter:0 update_increment_test">
+    <system-out>FatCnt0 = []
+Increment1 = {&lt;&lt;43,105,91,7,237,85,52,200,0,93,104,192,43,217,16,108,188,175,
+                188,68&gt;&gt;,
+              5}
+FatCnt1 = [{&lt;&lt;43,105,91,7,237,85,52,200,0,93,104,192,43,217,16,108,188,175,188,
+              68&gt;&gt;,
+            5}]
+Decrement1 = {&lt;&lt;188,1,199,61,60,221,134,85,27,124,248,151,102,195,191,222,124,
+                155,227,9&gt;&gt;,
+              -2}
+FatCnt2 = [{&lt;&lt;43,105,91,7,237,85,52,200,0,93,104,192,43,217,16,108,188,175,188,
+              68&gt;&gt;,
+            5},
+           {&lt;&lt;188,1,199,61,60,221,134,85,27,124,248,151,102,195,191,222,124,
+              155,227,9&gt;&gt;,
+            -2}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_fat_counter:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_flag_dw:0 compression_test (module 'antidote_crdt_flag_dw')">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_flag_ew:0 prop1_test">
+    <system-out>Reset1Effect = {[&lt;&lt;214,95,143,157,23,87,7,79,252,20,156,87,76,208,144,72,70,
+                   247,45,199&gt;&gt;],
+                []}
+Enable1Effect = {[],
+                 [&lt;&lt;214,95,143,157,23,87,7,79,252,20,156,87,76,208,144,72,70,
+                    247,45,199&gt;&gt;]}
+Flag1a = [&lt;&lt;214,95,143,157,23,87,7,79,252,20,156,87,76,208,144,72,70,247,45,
+            199&gt;&gt;]
+Flag1b = []
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_flag_ew:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_gmap:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_gmap:0 update_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_gmap:0 update2_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_gmap:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_integer:0 compression_test (module 'antidote_crdt_integer')">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.003" name="antidote_crdt_map:0 all_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.002" name="antidote_crdt_map:0 type_check_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_aw:0 reset1_test (module 'antidote_crdt_map_aw')">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_rr:0 reset1_test">
+    <system-out>Map0 = {dict,0,16,16,8,80,48,
+             {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+             {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Incr1 = {[{{a,antidote_crdt_fat_counter},
+           {ok,{&lt;&lt;159,137,145,4,113,42,170,165,200,90,189,161,146,135,74,216,
+                  145,227,214,168&gt;&gt;,
+                1}}}],
+         []}
+Map1a = {dict,1,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],
+                [[{a,antidote_crdt_fat_counter},
+                  {&lt;&lt;159,137,145,4,113,42,170,165,200,90,189,161,146,135,74,
+                     216,145,227,214,168&gt;&gt;,
+                   1}]],
+                [],[],[],[],[],[]}}}
+Reset1 = {[],
+          [{{a,antidote_crdt_fat_counter},
+            {ok,[&lt;&lt;159,137,145,4,113,42,170,165,200,90,189,161,146,135,74,
+                   216,145,227,214,168&gt;&gt;]}}]}
+Map1b = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Remove1 = {[],[{{a,antidote_crdt_fat_counter},{ok,[]}}]}
+Map2a = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Map1c = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Reset2 = {[],[]}
+Map1d = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Incr2 = {[{{a,antidote_crdt_fat_counter},
+           {ok,{&lt;&lt;21,54,13,206,243,14,223,195,147,204,174,60,97,195,192,243,
+                  238,161,77,216&gt;&gt;,
+                2}}}],
+         []}
+Map1e = {dict,1,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],
+                [[{a,antidote_crdt_fat_counter},
+                  {&lt;&lt;21,54,13,206,243,14,223,195,147,204,174,60,97,195,192,243,
+                     238,161,77,216&gt;&gt;,
+                   2}]],
+                [],[],[],[],[],[]}}}
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_rr:0 reset2_test">
+    <system-out>Map0 = []
+Add1 = {[{{s,antidote_crdt_set_rw},
+          {ok,[{a,[],
+                  [&lt;&lt;83,28,38,125,237,171,60,9,192,36,99,107,73,157,106,34,33,
+                     169,30,105&gt;&gt;],
+                  []}]}}],
+        []}
+Map1a = [{{s,antidote_crdt_set_rw},[a]}]
+Reset1 = {[],
+          [{{s,antidote_crdt_set_rw},
+            {ok,[{a,[&lt;&lt;83,28,38,125,237,171,60,9,192,36,99,107,73,157,106,34,
+                       33,169,30,105&gt;&gt;],
+                    [],[]}]}}]}
+Map1b = []
+Remove1 = {[],[{{s,antidote_crdt_set_rw},{ok,[]}}]}
+Map2a = []
+Map1c = []
+Reset2 = {[],[]}
+Map1d = []
+Add2 = {[{{s,antidote_crdt_set_rw},
+          {ok,[{b,[],
+                  [&lt;&lt;65,248,73,239,12,165,36,14,179,164,139,193,14,42,185,238,
+                     74,52,151,242&gt;&gt;],
+                  []}]}}],
+        []}
+Map1e = [{{s,antidote_crdt_set_rw},[b]}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_rr:0 prop1_test">
+    <system-out>Map0 = {dict,0,16,16,8,80,48,
+             {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+             {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Add1 = {[{{a,antidote_crdt_map_rr},
+          {ok,{[{{a,antidote_crdt_set_rw},
+                 {ok,[{a,[],
+                         [&lt;&lt;152,79,87,148,132,67,220,120,151,106,67,53,95,7,
+                            214,92,79,95,141,165&gt;&gt;],
+                         []}]}}],
+               []}}}],
+        []}
+Map1a = {dict,1,16,16,8,80,48,
+         {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+         {{[],[],[],[],[],[],[],[],[],
+           [[{a,antidote_crdt_map_rr}|
+             {dict,1,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[[{a,antidote_crdt_set_rw},
+                  {a,
+                   {[&lt;&lt;152,79,87,148,132,67,220,120,151,106,67,53,95,7,214,92,
+                       79,95,141,165&gt;&gt;],
+                    []}}]],
+                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}]],
+           [],[],[],[],[],[]}}}
+Reset1 = {[],
+          [{{a,antidote_crdt_map_rr},
+            {ok,{[],
+                 [{{a,antidote_crdt_set_rw},
+                   {ok,[{a,[&lt;&lt;152,79,87,148,132,67,220,120,151,106,67,53,95,7,
+                              214,92,79,95,141,165&gt;&gt;],
+                           [],[]}]}}]}}}]}
+Map1b = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_rr:0 prop2_test">
+    <system-out>Map0 = {dict,0,16,16,8,80,48,
+             {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+             {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Add1 = {[{{b,antidote_crdt_map_rr},
+          {ok,{[],[{{a,antidote_crdt_set_rw},{ok,[]}}]}}}],
+        []}
+Map1a = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+Remove2 = {[],[{{b,antidote_crdt_map_rr},{ok,{[],[]}}}]}
+Map1b = {dict,0,16,16,8,80,48,
+              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}}
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_map_rr:0 remove_test">
+    <system-out>M3 state = []
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_mvreg:0 reset_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_mvreg:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 add_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 value_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 remove_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 remove2_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 concurrent_add_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 binary_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_orset:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 new_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 generate_downstream_invalid_position_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 generate_downstream_empty_rga_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 generate_downstream_non_empty_rga_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 add_right_in_empty_rga_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 add_right_in_non_empty_rga_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 insert_in_the_middle_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 remove_first_element_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 remove_middle_element_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 remove_last_element_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 insert_right_of_a_remove_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 purge_tombstones_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 concurrent_updates_in_two_replicas_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_rga:0 is_operation_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 reset1_test">
+    <system-out>ResetEffect = []
+Add1Effect = [{a,[],
+                 [&lt;&lt;42,65,143,91,147,147,75,153,195,182,73,187,190,53,44,74,
+                    223,30,139,9&gt;&gt;],
+                 []}]
+Add2Effect = [{a,[],
+                 [&lt;&lt;6,12,24,170,104,21,114,53,206,154,165,126,47,136,71,74,
+                    161,139,236,174&gt;&gt;],
+                 []}]
+Set1a = []
+Set1b = [{a,{[&lt;&lt;42,65,143,91,147,147,75,153,195,182,73,187,190,53,44,74,223,
+                30,139,9&gt;&gt;],
+             []}}]
+Set2a = [{a,{[&lt;&lt;6,12,24,170,104,21,114,53,206,154,165,126,47,136,71,74,161,
+                139,236,174&gt;&gt;],
+             []}}]
+Set2b = [{a,{[&lt;&lt;6,12,24,170,104,21,114,53,206,154,165,126,47,136,71,74,161,
+                139,236,174&gt;&gt;],
+             []}}]
+Set2c = [{a,{[&lt;&lt;6,12,24,170,104,21,114,53,206,154,165,126,47,136,71,74,161,139,
+                236,174&gt;&gt;,
+              &lt;&lt;42,65,143,91,147,147,75,153,195,182,73,187,190,53,44,74,223,
+                30,139,9&gt;&gt;],
+             []}}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 reset2_test">
+    <system-out>
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 add_test">
+    <system-out>Set0 = []
+Set1 = [{a,{[&lt;&lt;220,183,86,161,0,64,215,212,13,111,71,170,8,208,209,98,195,74,
+               96,2&gt;&gt;],
+            []}}]
+Set2 = [{a,{[&lt;&lt;220,183,86,161,0,64,215,212,13,111,71,170,8,208,209,98,195,74,
+               96,2&gt;&gt;],
+            []}},
+        {b,{[&lt;&lt;13,196,134,226,36,85,173,58,190,35,27,244,23,254,100,55,53,85,
+               134,144&gt;&gt;],
+            []}}]
+Add1Effect = [{a,[],
+                 [&lt;&lt;220,183,86,161,0,64,215,212,13,111,71,170,8,208,209,98,
+                    195,74,96,2&gt;&gt;],
+                 []}]
+Add2Effect = [{b,[],
+                 [&lt;&lt;13,196,134,226,36,85,173,58,190,35,27,244,23,254,100,55,
+                    53,85,134,144&gt;&gt;],
+                 []}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 prop1_test">
+    <system-out>ResetEffect = []
+Add3Effect = [{b,[],
+                 [&lt;&lt;131,211,202,229,7,105,130,110,25,69,5,58,66,212,137,108,
+                    154,174,35,175&gt;&gt;],
+                 []}]
+Set1a = []
+Set3a = [{b,{[&lt;&lt;131,211,202,229,7,105,130,110,25,69,5,58,66,212,137,108,154,
+                174,35,175&gt;&gt;],
+             []}}]
+Set1b = [{b,{[&lt;&lt;131,211,202,229,7,105,130,110,25,69,5,58,66,212,137,108,154,
+                174,35,175&gt;&gt;],
+             []}}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 prop2_test">
+    <system-out>Remove1Effect = [{b,[],[],
+                    [&lt;&lt;106,7,56,139,148,21,72,209,232,88,188,131,166,59,179,
+                       128,237,166,7,41&gt;&gt;]}]
+Add3Effect = [{a,[],
+                 [&lt;&lt;83,69,239,188,128,41,35,237,92,0,77,252,193,41,177,176,1,
+                    70,68,165&gt;&gt;],
+                 []}]
+Set1a = [{b,{[],
+             [&lt;&lt;106,7,56,139,148,21,72,209,232,88,188,131,166,59,179,128,
+                237,166,7,41&gt;&gt;]}}]
+Set3a = [{a,{[&lt;&lt;83,69,239,188,128,41,35,237,92,0,77,252,193,41,177,176,1,70,
+                68,165&gt;&gt;],
+             []}}]
+Set1b = [{a,{[&lt;&lt;83,69,239,188,128,41,35,237,92,0,77,252,193,41,177,176,1,70,
+                68,165&gt;&gt;],
+             []}},
+         {b,{[],
+             [&lt;&lt;106,7,56,139,148,21,72,209,232,88,188,131,166,59,179,128,
+                237,166,7,41&gt;&gt;]}}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 prop3_test">
+    <system-out>Reset3Effect = []
+Add2Effect = [{a,[],
+                 [&lt;&lt;92,171,21,20,56,207,69,238,138,7,235,119,140,34,147,190,
+                    242,45,207,35&gt;&gt;],
+                 []}]
+Set2a = [{a,{[&lt;&lt;92,171,21,20,56,207,69,238,138,7,235,119,140,34,147,190,242,
+                45,207,35&gt;&gt;],
+             []}}]
+Set3a = []
+Set3b = [{a,{[&lt;&lt;92,171,21,20,56,207,69,238,138,7,235,119,140,34,147,190,242,
+                45,207,35&gt;&gt;],
+             []}}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 prop4_test">
+    <system-out>Reset3Effect = []
+Add2Effect = [{a,[],
+                 [&lt;&lt;213,163,136,6,89,110,162,99,199,226,184,251,37,191,125,
+                    142,222,209,144,212&gt;&gt;],
+                 []}]
+Set2a = [{a,{[&lt;&lt;213,163,136,6,89,110,162,99,199,226,184,251,37,191,125,142,
+                222,209,144,212&gt;&gt;],
+             []}}]
+Set3a = []
+Set3b = [{a,{[&lt;&lt;213,163,136,6,89,110,162,99,199,226,184,251,37,191,125,142,
+                222,209,144,212&gt;&gt;],
+             []}}]
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 prop5_test">
+    <system-out>Reset2Effect = [{a,[&lt;&lt;175,117,216,34,53,124,132,77,66,39,48,18,205,239,50,146,
+                      165,156,180,194&gt;&gt;],
+                   [],[]}]
+Add2Effect = [{a,[],
+                 [&lt;&lt;175,117,216,34,53,124,132,77,66,39,48,18,205,239,50,146,
+                    165,156,180,194&gt;&gt;],
+                 []}]
+Set2a = [{a,{[&lt;&lt;175,117,216,34,53,124,132,77,66,39,48,18,205,239,50,146,165,
+                156,180,194&gt;&gt;],
+             []}}]
+Set2b = []
+
+    </system-out>
+  </testcase>
+  <testcase time="0.000" name="antidote_crdt_set_rw:0 compression_test">
+    <system-out>
+    </system-out>
+  </testcase>
+</testsuite>

@@ -197,7 +197,7 @@ compression_test() ->
     Token2 = unique(),
     Token3 = unique(),
     ?assertEqual(can_compress({{a, Token1, []}}, {{a, Token2, [Token1]}}), true),
-    ?assertEqual(compress({a, Token1, []}, {a, Token2, [Token1]}), {noop, {a, Token2, [Token1]}}),
+    ?assertEqual(compress({a, Token1, []}, {a, Token2, [Token1]}), {noop, {a, Token2, []}}),
     ?assertEqual(compress({a, Token2, [Token1]}, {a, Token1, []}), {{a, Token2, [Token1]}, noop}),
     ?assertEqual(compress({a, Token2, [Token1]}, {a, Token3, [Token2]}), {noop, {a, Token3, [Token1]}}).
 
