@@ -152,7 +152,7 @@ can_compress(_, _) ->
     true.
 
 -spec compress(mvreg_effect(), mvreg_effect()) -> {mvreg_effect() | noop, mvreg_effect() | noop}.
-compress({_, ToAdd1, ToRemove1}=A, {_, ToAdd2, ToRemove2}=B) ->
+compress({_V1, ToAdd1, ToRemove1}=A, {V2, ToAdd2, ToRemove2}=B) ->
     Removes = ordsets:union(ToRemove1, ToRemove2),
     A1 = case ordsets:subtract([ToAdd1], Removes) of
       [] ->
@@ -164,7 +164,10 @@ compress({_, ToAdd1, ToRemove1}=A, {_, ToAdd2, ToRemove2}=B) ->
       [] ->
         noop;
       [ToAdd2] ->
-        B
+        case A1 of
+          noop -> {V2, ToAdd2, ordsets:subtract(Removes, [ToAdd1])};
+          _ -> B
+        end
     end,
     {A1, B1}.
 
@@ -192,8 +195,10 @@ reset_test() ->
 compression_test() ->
     Token1 = unique(),
     Token2 = unique(),
+    Token3 = unique(),
     ?assertEqual(can_compress({{a, Token1, []}}, {{a, Token2, [Token1]}}), true),
     ?assertEqual(compress({a, Token1, []}, {a, Token2, [Token1]}), {noop, {a, Token2, [Token1]}}),
-    ?assertEqual(compress({a, Token2, [Token1]}, {a, Token1, []}), {{a, Token2, [Token1]}, noop}).
+    ?assertEqual(compress({a, Token2, [Token1]}, {a, Token1, []}), {{a, Token2, [Token1]}, noop}),
+    ?assertEqual(compress({a, Token2, [Token1]}, {a, Token3, [Token2]}), {noop, {a, Token3, [Token1]}}).
 
 -endif.
