@@ -71,7 +71,7 @@ downstream({update, {{Key, Type}, Op}}, CurrentMap) ->
       false -> Type:new()
     end,
     {ok, DownstreamOp} = Type:downstream(Op, CurrentValue),
-    {ok, {update, [{update, {{Key, Type}, DownstreamOp}}]}};
+    {ok, {update, {{Key, Type}, DownstreamOp}}};
 downstream({update, Ops}, CurrentMap) when is_list(Ops) ->
     {ok, {update, lists:sort(lists:map(fun(Op) -> {ok, DSOp} = downstream({update, Op}, CurrentMap), DSOp end, Ops))}};
 downstream({reset, {}}, CurrentMap) ->
@@ -147,12 +147,18 @@ distinct([X|Xs]) ->
 can_compress(_, _) -> true.
 
 -spec compress(gmap_effect(), gmap_effect()) -> {gmap_effect() | noop, gmap_effect() | noop}.
+compress({update, {{_Key1, _Type1}, _Update1} = A}, {update, {{_Key2, _Type2}, _Update2} = B}) ->
+    compress({update, [{update, A}]}, {update, [{update, B}]});
+compress({update, {{_Key1, _Type1}, _Update1} = A}, B) ->
+    compress({update, [{update, A}]}, B);
+compress(A, {update, {{_Key2, _Type2}, _Update2} = B}) ->
+    compress(A, {update, [{update, B}]});
 compress({update, A}, {update, B}) ->
     NewOp = case compress_helper(A, B) of
         [] -> noop;
-        Op -> Op
+        Op -> {update, Op}
     end,
-    {noop, {update, NewOp}}.
+    {noop, NewOp}.
 
 -spec compress_helper([nested_op()], [nested_op()]) -> [nested_op()].
 compress_helper([], B) ->
@@ -163,11 +169,16 @@ compress_helper([Op1 = {update, {Elem1, IOp1}} | Rest1] = Ops1, [Op2 = {update, 
     if
         Elem1 == Elem2 ->
             {_, Type} = Elem1,
-            case Type:compress(IOp1, IOp2) of
-                {noop, noop} -> compress_helper(Rest1, Rest2);
-                {noop, NewOp} -> [{update, {Elem1, NewOp}} | compress_helper(Rest1, Rest2)];
-                {NewOp, noop} -> [{update, {Elem1, NewOp}} | compress_helper(Rest1, Rest2)];
-                {NewOp1, NewOp2} -> [{update, {Elem1, NewOp1}} | [{update, {Elem1, NewOp2}} | compress_helper(Rest1, Rest2)]]
+            case antidote_crdt:is_compressable(Type) andalso Type:can_compress(IOp1, IOp2) of
+                true ->
+                    case Type:compress(IOp1, IOp2) of
+                        {noop, noop} -> compress_helper(Rest1, Rest2);
+                        {noop, NewOp} -> [{update, {Elem1, NewOp}} | compress_helper(Rest1, Rest2)];
+                        {NewOp, noop} -> [{update, {Elem1, NewOp}} | compress_helper(Rest1, Rest2)];
+                        {NewOp1, NewOp2} -> [{update, {Elem1, NewOp1}}, {update, {Elem1, NewOp2}} | compress_helper(Rest1, Rest2)]
+                    end;
+                false ->
+                    [Op1, Op2 | compress_helper(Rest1, Rest2)]
             end;
         Elem1 > Elem2 ->
             [Op2 | compress_helper(Ops1, Rest2)];
@@ -186,7 +197,7 @@ new_test() ->
 update_test() ->
     Map1 = new(),
     {ok, DownstreamOp} = downstream({update, {{key1, antidote_crdt_lwwreg}, {assign, <<"test">>}}}, Map1),
-    ?assertMatch({update, [{update, {{key1, antidote_crdt_lwwreg}, {_TS, <<"test">>}}}]}, DownstreamOp),
+    ?assertMatch({update, {{key1, antidote_crdt_lwwreg}, {_TS, <<"test">>}}}, DownstreamOp),
     {ok, Map2} = update(DownstreamOp, Map1),
     ?assertEqual([{{key1, antidote_crdt_lwwreg}, <<"test">>}], value(Map2)).
 
