@@ -145,6 +145,7 @@ require_state_downstream(Op) ->
 %% ===================================================================
 
 -spec can_compress(effect(), effect()) -> boolean().
+can_compress({_Token1, _Val1}, {_Token2, _Val2}) -> false;
 can_compress(_, _) -> true.
 
 -spec compress(effect(), effect()) -> {effect() | noop, effect() | noop}.
@@ -154,12 +155,6 @@ compress(A, []) ->
     {noop, A};
 compress([], B) ->
     {noop, B};
-compress({Token1, Val1}, {_Token2, Val2}) ->
-    NewOp = case Val1 + Val2 of
-        0 -> noop;
-        V -> {Token1, V}
-    end,
-    {noop, NewOp};
 compress({Token1, _Val1}=A, Tokens) ->
     A1 = case ordsets:subtract([Token1], Tokens) of
       [] ->
@@ -215,10 +210,8 @@ update_increment_test() ->
 compression_test() ->
     Token1 = unique(),
     Token2 = unique(),
-    ?assertEqual(can_compress({Token1, 5}, {Token2, -5}), true),
-    ?assertEqual(compress({Token1, 5}, {Token2, -5}), {noop, noop}),
-    ?assertEqual(compress({Token1, 5}, {Token2, 10}), {noop, {Token1, 15}}),
-    ?assertEqual(compress({Token2, 10}, {Token1, 5}), {noop, {Token2, 15}}),
+    ?assertEqual(can_compress({Token1, 5}, {Token2, -5}), false),
+    ?assertEqual(can_compress({Token1, 5}, []), true),
     ?assertEqual(compress({Token2, 10}, lists:sort([Token1, Token2])), {noop, lists:sort([Token1, Token2])}),
     ?assertEqual(compress(lists:sort([Token1, Token2]), {Token2, 10}), {noop, lists:sort([Token1, Token2])}),
     ?assertEqual(compress({Token1, 10}, [Token2]), {{Token1, 10}, [Token2]}).
