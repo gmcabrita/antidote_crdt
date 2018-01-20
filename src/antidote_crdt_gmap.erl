@@ -47,7 +47,7 @@
 -type nested_op() :: {{Key::term(), Type::atom() }, Op::term()}.
 -type gmap_effect() ::
     {update, nested_downstream()}
-  | {update, [nested_downstream()]}.
+  | {update, [gmap_effect()]}.
 -type nested_downstream() :: {{Key::term(), Type::atom() }, Op::term()}.
 
 -spec new() -> gmap().
