@@ -154,11 +154,7 @@ compress({update, {{_Key1, _Type1}, _Update1} = A}, B) ->
 compress(A, {update, {{_Key2, _Type2}, _Update2} = B}) ->
     compress(A, {update, [{update, B}]});
 compress({update, A}, {update, B}) ->
-    NewOp = case compress_helper(A, B) of
-        [] -> noop;
-        Op -> {update, Op}
-    end,
-    {noop, NewOp}.
+    {noop, {update, compress_helper(A, B)}}.
 
 -spec compress_helper([nested_op()], [nested_op()]) -> [nested_op()].
 compress_helper([], B) ->

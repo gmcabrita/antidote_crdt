@@ -217,11 +217,7 @@ can_compress(_, _) ->
 
 -spec compress(downstream_op(), downstream_op()) -> {downstream_op() | noop, downstream_op() | noop}.
 compress(A, B) ->
-    NewOp = case compress_helper(A, B) of
-        [] -> noop;
-        Op -> Op
-    end,
-    {noop, NewOp}.
+    {noop, compress_helper(A, B)}.
 
 -spec compress_helper(downstream_op(), downstream_op()) -> downstream_op().
 compress_helper([], B) ->

@@ -150,7 +150,7 @@ can_compress(_, _) -> true.
 
 -spec compress(effect(), effect()) -> {effect() | noop, effect() | noop}.
 compress([], []) ->
-    {noop, noop};
+    {noop, []};
 compress(A, []) ->
     {noop, A};
 compress([], B) ->

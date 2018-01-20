@@ -169,7 +169,10 @@ compress({_V1, ToAdd1, ToRemove1}=A, {V2, ToAdd2, ToRemove2}=B) ->
           _ -> B
         end
     end,
-    {A1, B1}.
+    case {A1, B1} of
+        {noop, noop} -> {noop, []};
+        _ -> {A1, B1}
+    end.
 
 %% ===================================================================
 %% EUnit tests

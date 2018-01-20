@@ -237,11 +237,7 @@ can_compress(_, _) ->
 
 -spec compress(downstream_op(), downstream_op()) -> {downstream_op() | noop, downstream_op() | noop}.
 compress(A, B) ->
-    NewOp = case compress_helper(A, B) of
-        [] -> noop;
-        Op -> Op
-    end,
-    {noop, NewOp}.
+    {noop, compress_helper(A, B)}.
 
 -spec compress_helper(downstream_op(), downstream_op()) -> downstream_op().
 compress_helper([], B) ->
@@ -385,7 +381,7 @@ compression_test() ->
     Token1 = unique(),
     Token2 = unique(),
     ?assertEqual(can_compress([{a, [Token1], []}], [{a, [], [Token1]}]), true),
-    ?assertEqual(compress([{a, [Token1], []}], [{a, [], [Token1]}]), {noop, noop}),
+    ?assertEqual(compress([{a, [Token1], []}], [{a, [], [Token1]}]), {noop, []}),
     ?assertEqual(compress([{a, [Token1], []}], []), {noop, [{a, [Token1], []}]}),
     ?assertEqual(compress([{a, [Token1], []}], [{a, [Token2], []}]), {noop, [{a, lists:sort([Token2, Token1]), []}]}),
     ?assertEqual(compress([{a, [Token1], []}], [{a, [Token2], [Token1]}]), {noop, [{a, [Token2], []}]}),

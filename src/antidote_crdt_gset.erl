@@ -86,7 +86,7 @@ from_binary(Bin) ->
 can_compress(_, _) -> true.
 
 -spec compress(gset_effect(), gset_effect()) -> {gset_effect() | noop, gset_effect() | noop}.
-compress([], []) -> {noop, noop};
+compress([], []) -> {noop, []};
 compress(A, []) -> {noop, A};
 compress([], B) -> {noop, B};
 compress(A, B) -> {noop, ordsets:union(A, B)}.
